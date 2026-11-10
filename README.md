@@ -1,4 +1,4 @@
-[![Pipeline](https://github.com/SEU_USUARIO/projeto-missao-marte/actions/workflows/pipeline.yml/badge.svg)](https://github.com/reisgui2006/projeto-missao-marte/actions/workflows/pipeline.yml)
+[![Pipeline](https://github.com/reisgui2006/projeto-missao-marte/actions/workflows/pipeline.yml/badge.svg)](https://github.com/reisgui2006/projeto-missao-marte/actions/workflows/pipeline.yml)
 
 # Missão Marte: ECLSS – Automação de Testes
 
