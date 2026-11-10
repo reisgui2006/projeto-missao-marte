@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel ECLSS - Habitat Marte</title>
+</head>
+<body>
+  <h1>Painel de Controle - ECLSS</h1>
+  <p>Oxigênio disponível: <span id="nivel-oxigenio">100</span></p>
+  <p>Água disponível: <span id="nivel-agua">200</span></p>
+
+  <form id="form-oxigenio">
+    <label for="quantidade">Cota extra de oxigênio:</label>
+    <input type="number" id="quantidade" min="1">
+    <button type="submit" id="solicitar">Solicitar</button>
+  </form>
+  <p id="mensagem"></p>
+
+  <script>
+    let oxigenio = 100;
+    document.getElementById("form-oxigenio").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const qtd = parseInt(document.getElementById("quantidade").value, 10);
+      // atualização assíncrona simulando a latência da resposta
+      setTimeout(function () {
+        const msg = document.getElementById("mensagem");
+        if (isNaN(qtd) || qtd > oxigenio) {
+          msg.textContent = "Erro: oxigênio insuficiente";
+        } else {
+          oxigenio -= qtd;
+          document.getElementById("nivel-oxigenio").textContent = oxigenio;
+          msg.textContent = "Solicitação aprovada";
+        }
+      }, 500);
+    });
+  </script>
+</body>
+</html>
